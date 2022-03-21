@@ -36,10 +36,10 @@
                 <div class="card">
                   <div class="stat-widget-one">
                     <div class="stat-icon dib">
-                      <i class="ti-money color-success border-success"></i>
+                      <i class="ti-user color-success border-success"></i>
                     </div>
                     <div class="stat-content dib">
-                      <div class="stat-text">Total Profit</div>
+                      <div class="stat-text">Clients</div>
                       <div class="stat-digit">1,012</div>
                     </div>
                   </div>
@@ -49,10 +49,10 @@
                 <div class="card">
                   <div class="stat-widget-one">
                     <div class="stat-icon dib">
-                      <i class="ti-user color-primary border-primary"></i>
+                      <i class="ti-layout-grid2 color-primary border-primary"></i>
                     </div>
                     <div class="stat-content dib">
-                      <div class="stat-text">New Customer</div>
+                      <div class="stat-text">Projects</div>
                       <div class="stat-digit">961</div>
                     </div>
                   </div>
@@ -62,10 +62,10 @@
                 <div class="card">
                   <div class="stat-widget-one">
                     <div class="stat-icon dib">
-                      <i class="ti-layout-grid2 color-pink border-pink"></i>
+                      <i class="ti-money color-pink border-pink"></i>
                     </div>
                     <div class="stat-content dib">
-                      <div class="stat-text">Active Projects</div>
+                      <div class="stat-text">Income</div>
                       <div class="stat-digit">770</div>
                     </div>
                   </div>
@@ -78,7 +78,7 @@
                       <i class="ti-link color-danger border-danger"></i>
                     </div>
                     <div class="stat-content dib">
-                      <div class="stat-text">Referral</div>
+                      <div class="stat-text">Expense</div>
                       <div class="stat-digit">2,781</div>
                     </div>
                   </div>
@@ -89,83 +89,109 @@
               <div class="col-lg-8">
                 <div class="card">
                   <div class="card-title">
-                    <h4>Today's Employee</h4>
+                    <h4>Total Projects</h4>
                   </div>
                   <div class="card-body">
                     <div class="table-responsive">
-                      <table class="table table-striped table-bordered">
-                        <thead class="table-bordered">
+                    <table
+                        id="bootstrap-data-table-export"
+                        class="table table-striped table-bordered">
+                        <thead>
                           <tr>
                             <th>#</th>
-                            <th>Name</th>
-                            <th>Department</th>
-                            <th>Date of joining</th>
-                            <th>Email</th>
-                            <th>Contact</th>
-                            <th>Designation</th>
-                            <th>Remark</th>
+                            <th>Project Name</th>
+                            <th>Client Name</th>
+                            <th>Renewal</th>
+                            <th>Renewal Date</th>
+                            <th>Status</th>
+                            <th>Action</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
-                            <th scope="row">1</th>
+                            <td>01</td>
+                            <td>Evocation</td>
                             <td>Arif Bipu</td>
-                            <td>Development</td>
-                            <td>13 Jan 2022</td>
-                            <td>info@gmail.com</td>
-                            <td>01676044462</td>
-                            <td>Senior Developer</td>
-                            <td>Parmanent</td>
+                            <td>Yearly</td>
+                            <td>20-04-2022</td>
+                            <td>Advance</td>
+                            <td>
+                                <div class="employeeTableIcon d-flex">
+                                    <div class="employeeTableIconDiv Icon1 d-flex justify-content-center align-items-center mr-1" onclick="location.href='profile.html'" onclick="location.href='profile.html'">
+                                        <i class="ti-eye"></i>
+                                    </div>
+                                    <div class="employeeTableIconDiv Icon2 d-flex justify-content-center align-items-center mr-1">
+                                        <i class="ti-trash"></i>
+                                    </div>
+                                    <div class="employeeTableIconDiv Icon3 d-flex justify-content-center align-items-center mr-1">
+                                        <i class="ti-pencil-alt"></i>
+                                    </div>
+                                </div>
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td>01</td>
+                            <td>Evocation</td>
+                            <td>Arif Bipu</td>
+                            <td>Yearly</td>
+                            <td>20-04-2022</td>
+                            <td>Advance</td>
+                            <td>
+                                <div class="employeeTableIcon d-flex">
+                                    <div class="employeeTableIconDiv Icon1 d-flex justify-content-center align-items-center mr-1" onclick="location.href='profile.html'" onclick="location.href='profile.html'">
+                                        <i class="ti-eye"></i>
+                                    </div>
+                                    <div class="employeeTableIconDiv Icon2 d-flex justify-content-center align-items-center mr-1">
+                                        <i class="ti-trash"></i>
+                                    </div>
+                                    <div class="employeeTableIconDiv Icon3 d-flex justify-content-center align-items-center mr-1">
+                                        <i class="ti-pencil-alt"></i>
+                                    </div>
+                                </div>
+                            </td>
                           </tr>
                           <tr>
-                            <th scope="row">1</th>
+                            <td>01</td>
+                            <td>Evocation</td>
                             <td>Arif Bipu</td>
-                            <td>Development</td>
-                            <td>13 Jan 2022</td>
-                            <td>info@gmail.com</td>
-                            <td>01676044462</td>
-                            <td>Senior Developer</td>
-                            <td>Parmanent</td>
+                            <td>Yearly</td>
+                            <td>20-04-2022</td>
+                            <td>Advance</td>
+                            <td>
+                                <div class="employeeTableIcon d-flex">
+                                    <div class="employeeTableIconDiv Icon1 d-flex justify-content-center align-items-center mr-1" onclick="location.href='profile.html'" onclick="location.href='profile.html'">
+                                        <i class="ti-eye"></i>
+                                    </div>
+                                    <div class="employeeTableIconDiv Icon2 d-flex justify-content-center align-items-center mr-1">
+                                        <i class="ti-trash"></i>
+                                    </div>
+                                    <div class="employeeTableIconDiv Icon3 d-flex justify-content-center align-items-center mr-1">
+                                        <i class="ti-pencil-alt"></i>
+                                    </div>
+                                </div>
+                            </td>
                           </tr>
                           <tr>
-                            <th scope="row">1</th>
+                            <td>01</td>
+                            <td>Evocation</td>
                             <td>Arif Bipu</td>
-                            <td>Development</td>
-                            <td>13 Jan 2022</td>
-                            <td>info@gmail.com</td>
-                            <td>01676044462</td>
-                            <td>Senior Developer</td>
-                            <td>Parmanent</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Arif Bipu</td>
-                            <td>Development</td>
-                            <td>13 Jan 2022</td>
-                            <td>info@gmail.com</td>
-                            <td>01676044462</td>
-                            <td>Senior Developer</td>
-                            <td>Parmanent</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Arif Bipu</td>
-                            <td>Development</td>
-                            <td>13 Jan 2022</td>
-                            <td>info@gmail.com</td>
-                            <td>01676044462</td>
-                            <td>Senior Developer</td>
-                            <td>Parmanent</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Arif Bipu</td>
-                            <td>Development</td>
-                            <td>13 Jan 2022</td>
-                            <td>info@gmail.com</td>
-                            <td>01676044462</td>
-                            <td>Senior Developer</td>
-                            <td>Parmanent</td>
+                            <td>Yearly</td>
+                            <td>20-04-2022</td>
+                            <td>Advance</td>
+                            <td>
+                                <div class="employeeTableIcon d-flex">
+                                    <div class="employeeTableIconDiv Icon1 d-flex justify-content-center align-items-center mr-1" onclick="location.href='profile.html'" onclick="location.href='profile.html'">
+                                        <i class="ti-eye"></i>
+                                    </div>
+                                    <div class="employeeTableIconDiv Icon2 d-flex justify-content-center align-items-center mr-1">
+                                        <i class="ti-trash"></i>
+                                    </div>
+                                    <div class="employeeTableIconDiv Icon3 d-flex justify-content-center align-items-center mr-1">
+                                        <i class="ti-pencil-alt"></i>
+                                    </div>
+                                </div>
+                            </td>
                           </tr>
                         </tbody>
                       </table>
@@ -180,7 +206,7 @@
                     <div class="panel">
                       <div class="panel-heading">
                         <div class="panel-title">
-                          <h4>Department</h4>
+                          <h4>Categories</h4>
                         </div>
                       </div>
                       <div class="panel-body">
@@ -198,7 +224,7 @@
                     <div class="panel">
                       <div class="panel-heading">
                         <div class="panel-title">
-                          <h4>Employee Designation</h4>
+                          <h4>Expense Sector</h4>
                         </div>
                       </div>
                       <div class="panel-body">
@@ -214,7 +240,7 @@
                     <div class="panel">
                       <div class="panel-heading">
                         <div class="panel-title">
-                          <h4>Expense Vs Deposit</h4>
+                          <h4>Deposit Vs Profit</h4>
                         </div>
                       </div>
                       <div class="panel-body">
