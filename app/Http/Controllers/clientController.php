@@ -38,4 +38,10 @@ class clientController extends Controller
         $clientList = Client::all();
         return view('client', ['clientlist' => $clientList]);
     }
+
+    function showCategoryData(Request $req)
+    {
+        $clientList = Client::all();
+        return view('addProject', ['clientlist' => $clientList]);
+    }
 }

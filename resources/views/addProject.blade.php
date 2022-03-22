@@ -45,8 +45,9 @@
                                 <div class="form-group">
                                     <label>Stakeholder</label>
                                     <select class="form-control input-default ">
-                                        <option>Client</option>
-                                        <option>Partner</option>
+                                      @foreach($clientlist as $item)
+                                        <option value="{{$item['id']}}">{{$item['name']}}</option>
+                                      @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -54,8 +55,11 @@
                                 <div class="form-group">
                                     <label>Category</label>
                                     <select class="form-control input-default ">
-                                        <option>1</option>
-                                        <option>2</option>
+                                      @foreach($categorylist as $item)
+                                      <option value="{{$item['id']}}">{{$item['name']}}</option>
+                                      @endforeach
+                                        
+                                        
                                     </select>
                                 </div>
                             </div>
@@ -85,10 +89,11 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label>Status</label>
+                                    <label>Payment Status</label>
                                     <select class="form-control input-default">
-                                        <option>Advance</option>
-                                        <option>Completed</option>
+                                        <option>No Payment</option>
+                                        <option>Advance Paid</option>
+                                        <option>Payment Completed</option>
                                     </select>
                                 </div>
                             </div>
