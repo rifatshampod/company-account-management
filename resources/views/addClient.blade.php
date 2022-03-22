@@ -34,90 +34,80 @@
             <div class="row">
               <div class="col-lg-12">
                 <div class="card">
-                    <form action="client.html">
+                    <form action="addClient" method="post">
+                    @csrf
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>Name</label>
-                                    <input type="text" class="form-control input-default" placeholder="Name" required>
+                                    <input type="text" name="name" class="form-control input-default" placeholder="Name" required>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>Client ID</label>
-                                    <input type="number" class="form-control input-default" placeholder="Client ID" required>
+                                    <input type="number" name="cid" class="form-control input-default" placeholder="Client ID" required>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>Company</label>
-                                    <input type="text" class="form-control input-default" placeholder="Company Name" required>
+                                    <input type="text" name="company" class="form-control input-default" placeholder="Company Name" required>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>Country</label>
-                                    <select class="form-control input-default">
-                                        <option>Bangladesh</option>
-                                        <option>India</option>
-                                        <option>Pakistan</option>
-                                        <option>Japan</option>
-                                        <option>Norway</option>
+                                    <select class="form-control input-default" name="country">
+                                        <option value="Bangladesh">Bangladesh</option>
+                                        <option value="India">India</option>
+                                        <option value="Malaysia">Malaysia</option>
+                                        <option value="China">China</option>
+                                        <option value="Bangladesh">Norway</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>Phone</label>
-                                    <input type="number" class="form-control input-default" placeholder="Phone Number" required>
+                                    <input type="number" name="phone" class="form-control input-default" placeholder="Phone Number" required>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>Whats App</label>
-                                    <input type="number" class="form-control input-default" placeholder="Whats App" required>
+                                    <input type="number" name="whatsapp" class="form-control input-default" placeholder="Whats App" required>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>Email</label>
-                                    <input type="email" class="form-control input-default" placeholder="Email" required>
+                                    <input type="email" name="email" class="form-control input-default" placeholder="Email" required>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label>Total Projects</label>
-                                    <input type="number" class="form-control input-default" placeholder="Total Projects" required>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label>Total Earning</label>
-                                    <input type="number" class="form-control input-default" placeholder="Total Earning" required>
-                                </div>
-                            </div>
+
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>Status</label>
-                                    <select class="form-control input-default ">
-                                        <option>Active</option>
-                                        <option>InActive</option>
+                                    <select class="form-control input-default " name="status">
+                                        <option value="active">Active</option>
+                                        <option value="active">InActive</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>Catagory</label>
-                                    <select class="form-control input-default ">
-                                        <option>Client</option>
-                                        <option>Partner</option>
+                                    <select class="form-control input-default" name="category">
+                                        <option value="client">Client</option>
+                                        <option value="partner">Partner</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label class=" control-label">Address</label>
-                                        <textarea class="form-control input-default" rows="2" placeholder="Address" required></textarea>
+                                        <textarea class="form-control input-default" name="address" rows="2" placeholder="Address" required></textarea>
                                 </div>
                             </div>
                         </div>

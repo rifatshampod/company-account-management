@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\clientController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,14 +15,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('dashboard');
 });
 
 //-------------Static view Routes
 
-Route::view('login','login');
 Route::view('dashboard','dashboard');
-Route::view('clients','client');
+//Route::view('clients','client');
 Route::view('create-client','addClient');
 Route::view('projects','project');
 Route::view('create-project','addProject');
@@ -34,5 +34,12 @@ Route::view('expense','expense');
 Route::view('add-expense','addExpense');
 Route::view('transfer','transfer');
 Route::view('add-transfer','addTransfer');
+Route::view('user','user');
+Route::view('profile','profile');
+Route::view('login','signIn');
+Route::view('forget','forgetPassword');
 
 //-------------Static view Routes
+
+Route::post("addClient", [clientController::class, 'saveData']);
+Route::get("clients", [clientController::class, 'retrieveData']);

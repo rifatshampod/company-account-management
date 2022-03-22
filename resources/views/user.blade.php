@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<x-header/>
+  <x-header/>
 
-<body>
-  <x-sidenav/>
+  <body>
+    <x-sidenav/>
 
     <div class="content-wrap">
       <div class="main">
@@ -12,7 +12,7 @@
             <div class="col-lg-8 p-r-0 title-margin-right">
               <div class="page-header">
                 <div class="page-title">
-                  <h1>All Projects</h1>
+                  <h1>User</h1>
                 </div>
               </div>
             </div>
@@ -22,7 +22,7 @@
                 <div class="page-title">
                   <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                    <li class="breadcrumb-item active">Projects</li>
+                    <li class="breadcrumb-item active">User</li>
                   </ol>
                 </div>
               </div>
@@ -32,59 +32,58 @@
           <!-- /# row -->
           <section id="main-content">
             <div class="row">
-              <div class="col-lg-12">
-                <div class="card">
-                  <div class="d-flex justify-content-end">
-                    <div>
-                      <button onclick="location.href='create-project'" type="button" class="btn btn-primary btn-flat btn-addon m-b-10 m-l-5"><i class="ti-plus"></i>Add Project</button>
+              <div class="col-lg-6">
+              <div class="card">
+                <form action="">
+                    <div class="row">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" class="form-control input-default" placeholder="Name" required>
+                        </div>
                     </div>
-                  </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" class="form-control input-default" placeholder="Email" required>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" class="form-control input-default" placeholder="password" required>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-3">
+                            <button type="submit" class="btn btn-primary btn-block m-b-10">Submit</button>
+                        </div>
+                    </div>
+                </form>
+              </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="card">
                   <div class="bootstrap-data-table-panel">
                     <div class="table-responsive">
                       <table
                         id="bootstrap-data-table-export"
-                        class="table table-striped table-bordered">
+                        class="table table-striped table-bordered"
+                      >
                         <thead>
                           <tr>
                             <th>#</th>
-                            <th>Project Name</th>
-                            <th>Client Name</th>
-                            <th>Renewal</th>
-                            <th>Renewal Date</th>
-                            <th>Status</th>
+                            <th>Name</th>
+                            <th>Email</th>
                             <th>Action</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
                             <td>01</td>
-                            <td>Evocation</td>
                             <td>Arif Bipu</td>
-                            <td>Yearly</td>
-                            <td>20-04-2022</td>
-                            <td>Advance</td>
-                            <td>
-                                <div class="employeeTableIcon d-flex">
-                                    <div class="employeeTableIconDiv Icon1 d-flex justify-content-center align-items-center mr-1" onclick="location.href='profile.html'" onclick="location.href='profile.html'">
-                                        <i class="ti-eye"></i>
-                                    </div>
-                                    <div class="employeeTableIconDiv Icon2 d-flex justify-content-center align-items-center mr-1">
-                                        <i class="ti-trash"></i>
-                                    </div>
-                                    <div class="employeeTableIconDiv Icon3 d-flex justify-content-center align-items-center mr-1">
-                                        <i class="ti-pencil-alt"></i>
-                                    </div>
-                                </div>
-                            </td>
-                          </tr>
-
-                          <tr>
-                            <td>01</td>
-                            <td>Evocation</td>
-                            <td>Arif Bipu</td>
-                            <td>Yearly</td>
-                            <td>20-04-2022</td>
-                            <td>Advance</td>
+                            <td>arifbipiu@gmail.com</td>
                             <td>
                                 <div class="employeeTableIcon d-flex">
                                     <div class="employeeTableIconDiv Icon1 d-flex justify-content-center align-items-center mr-1" onclick="location.href='profile.html'" onclick="location.href='profile.html'">
@@ -101,11 +100,8 @@
                           </tr>
                           <tr>
                             <td>01</td>
-                            <td>Evocation</td>
                             <td>Arif Bipu</td>
-                            <td>Yearly</td>
-                            <td>20-04-2022</td>
-                            <td>Advance</td>
+                            <td>arifbipiu@gmail.com</td>
                             <td>
                                 <div class="employeeTableIcon d-flex">
                                     <div class="employeeTableIconDiv Icon1 d-flex justify-content-center align-items-center mr-1" onclick="location.href='profile.html'" onclick="location.href='profile.html'">
@@ -122,11 +118,26 @@
                           </tr>
                           <tr>
                             <td>01</td>
-                            <td>Evocation</td>
                             <td>Arif Bipu</td>
-                            <td>Yearly</td>
-                            <td>20-04-2022</td>
-                            <td>Advance</td>
+                            <td>arifbipiu@gmail.com</td>
+                            <td>
+                                <div class="employeeTableIcon d-flex">
+                                    <div class="employeeTableIconDiv Icon1 d-flex justify-content-center align-items-center mr-1" onclick="location.href='profile.html'" onclick="location.href='profile.html'">
+                                        <i class="ti-eye"></i>
+                                    </div>
+                                    <div class="employeeTableIconDiv Icon2 d-flex justify-content-center align-items-center mr-1">
+                                        <i class="ti-trash"></i>
+                                    </div>
+                                    <div class="employeeTableIconDiv Icon3 d-flex justify-content-center align-items-center mr-1">
+                                        <i class="ti-pencil-alt"></i>
+                                    </div>
+                                </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>01</td>
+                            <td>Arif Bipu</td>
+                            <td>arifbipiu@gmail.com</td>
                             <td>
                                 <div class="employeeTableIcon d-flex">
                                     <div class="employeeTableIconDiv Icon1 d-flex justify-content-center align-items-center mr-1" onclick="location.href='profile.html'" onclick="location.href='profile.html'">

@@ -45,6 +45,9 @@
                 <li><a href="transfer">Transfer</a></li>
               </ul>
             </li>
+            <li>
+              <a href="user"><i class="ti-user"></i> User</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -87,17 +90,12 @@
                     <div class="dropdown-content-body">
                       <ul>
                         <li>
-                          <a href="#">
+                          <a href="profile">
                             <i class="ti-user"></i>
                             <span>Profile</span>
                           </a>
                         </li>
-                        <li>
-                          <a href="#">
-                            <i class="ti-settings"></i>
-                            <span>Setting</span>
-                          </a>
-                        </li>
+                        
 
                         <li>
                           <a href="#">
