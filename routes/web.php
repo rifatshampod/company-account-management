@@ -24,7 +24,7 @@ Route::get('/', function () {
 Route::view('dashboard','dashboard');
 //Route::view('clients','client');
 Route::view('create-client','addClient');
-Route::view('projects','project');
+// Route::view('projects','project');
 //Route::view('create-project','addProject');
 //Route::view('project-category','projectCategory');
 Route::view('account','account');
@@ -47,4 +47,6 @@ Route::get("clients", [clientController::class, 'retrieveData']);
 Route::post("add-category", [projectController::class, 'saveCategoryData']);
 Route::get("project-category", [projectController::class, 'retrieveCategoryData']);
 Route::get("create-project", [projectController::class, 'showCategoryData']);
+Route::post("add-project", [projectController::class, 'saveProjectData']);
+Route::get("projects", [projectController::class, 'retrieveProjectData']);
 

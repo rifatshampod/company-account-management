@@ -16,7 +16,7 @@ class clientController extends Controller
         ]);
         
         $client = new Client;
-        $client->name = $req->input('name');
+        $client->client_name = $req->input('name');
         $client->client_id = $req->input('cid');
         $client->company = $req->input('company');
         $client->country = $req->input('country');
@@ -39,9 +39,5 @@ class clientController extends Controller
         return view('client', ['clientlist' => $clientList]);
     }
 
-    function showCategoryData(Request $req)
-    {
-        $clientList = Client::all();
-        return view('addProject', ['clientlist' => $clientList]);
-    }
+    
 }

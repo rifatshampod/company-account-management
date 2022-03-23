@@ -33,18 +33,19 @@
             <div class="row">
               <div class="col-lg-12">
                 <div class="card">
-                    <form action="project.html">
+                    <form action="add-project" method="post">
+                      @csrf 
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="form-group">
                                     <label> Project Name</label>
-                                    <input type="text" class="form-control input-default" placeholder="Project Name" required>
+                                    <input type="text" name="name" class="form-control input-default" placeholder="Project Name" required>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>Stakeholder</label>
-                                    <select class="form-control input-default ">
+                                    <select class="form-control input-default " name="client">
                                       @foreach($clientlist as $item)
                                         <option value="{{$item['id']}}">{{$item['name']}}</option>
                                       @endforeach
@@ -54,7 +55,7 @@
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>Category</label>
-                                    <select class="form-control input-default ">
+                                    <select class="form-control input-default " name="category">
                                       @foreach($categorylist as $item)
                                       <option value="{{$item['id']}}">{{$item['name']}}</option>
                                       @endforeach
@@ -66,56 +67,56 @@
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>Budget</label>
-                                    <input type="number" class="form-control input-default" placeholder="Budget" required>
+                                    <input type="number" name="budget" class="form-control input-default" placeholder="Budget" required>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>Advance</label>
-                                    <input type="number" class="form-control input-default" placeholder="Advance" required>
+                                    <input type="number" name="advance" class="form-control input-default" placeholder="Advance" required>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>Start Date</label>
-                                    <input type="date" class="form-control input-default" placeholder="Phone Number" required>
+                                    <input type="date" name="start_date" class="form-control input-default" placeholder="Phone Number" required>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>Due Date</label>
-                                    <input type="date" class="form-control input-default" placeholder="Phone Number" required>
+                                    <input type="date" name="due_date" class="form-control input-default" placeholder="Phone Number" required>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>Payment Status</label>
-                                    <select class="form-control input-default">
-                                        <option>No Payment</option>
-                                        <option>Advance Paid</option>
-                                        <option>Payment Completed</option>
+                                    <select class="form-control input-default" name="status">
+                                        <option value="No Payment">No Payment</option>
+                                        <option value="Advance Paid">Advance Paid</option>
+                                        <option value="Payment Completed">Payment Completed</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>Renewal</label>
-                                    <select class="form-control input-default">
-                                        <option>Yearly</option>
-                                        <option>No renewal</option>
+                                    <select class="form-control input-default" name="renewal">
+                                        <option value="yearly">Yearly</option>
+                                        <option value="no renewal">No renewal</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>Renewal Charge</label>
-                                    <input type="number" class="form-control input-default" placeholder="Renewal Charge" required>
+                                    <input type="number" name="renewal_charge" class="form-control input-default" placeholder="Renewal Charge" required>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>Renewal Date</label>
-                                    <input type="date" class="form-control input-default" placeholder="Renewal Date" required>
+                                    <input type="date" name="renewal_date" class="form-control input-default" placeholder="Renewal Date" required>
                                 </div>
                             </div>
                         </div>
