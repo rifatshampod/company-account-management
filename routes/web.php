@@ -30,16 +30,18 @@ Route::view('create-client','addClient');
 //Route::view('project-category','projectCategory');
 //Route::view('account','account');
 Route::view('add-account','addAccount');
-Route::view('income','income');
-Route::view('add-income','addIncome');
-Route::view('expense','expense');
-Route::view('add-expense','addExpense');
-Route::view('transfer','transfer');
-Route::view('add-transfer','addTransfer');
+//Route::view('income','income');
+//Route::view('add-income','addIncome');
+//Route::view('expense','expense');
+//Route::view('add-expense','addExpense');
+//Route::view('transfer','transfer');
+///Route::view('add-transfer','addTransfer');
 Route::view('user','user');
 Route::view('profile','profile');
 Route::view('login','signIn');
 Route::view('forget','forgetPassword');
+Route::view('single-client','singleClientView');
+Route::view('single-project','singleProjectView');
 
 //-------------Static view Routes
 
@@ -59,7 +61,23 @@ Route::post("add-project", [projectController::class, 'saveProjectData']); //add
 Route::get("projects", [projectController::class, 'retrieveProjectData']);  // show all projects in project page
 
 //account
-Route::post("addAccount", [accountController::class, 'saveAccountData']); // add client to database
-Route::get("account", [accountController::class, 'retrieveAccountData']);  //show all clients in client page
+Route::post("addAccount", [accountController::class, 'saveAccountData']); // add account to database
+Route::get("account", [accountController::class, 'retrieveAccountData']);  //show all accounts in account page
+
+//transfer
+Route::get('add-transfer',[accountController::class, 'showAccounts']); //show dynamic accounts in input field
+Route::post("addTransfer", [accountController::class, 'saveTransferData']); // add client to database
+Route::get("transfer", [accountController::class, 'retrieveTransferData']);  //show all clients in client page
+
+//expenses
+Route::get('add-expense',[accountController::class, 'showExpenseAccounts']); //show dynamic accounts in input field
+Route::post("addExpense", [accountController::class, 'saveExpenseData']); // add client to database
+Route::get("expense", [accountController::class, 'retrieveExpenseData']);  //show all clients in client page
+
+//incomes
+Route::get('add-income',[accountController::class, 'showIncomeAccounts']); //show dynamic accounts in input field
+Route::post("addIncome", [accountController::class, 'saveIncomeData']); // add client to database
+Route::get("income", [accountController::class, 'retrieveIncomeData']);  //show all clients in client page
+
 
 //-------------- controller routes----------------------------------------------------------------------------------------------

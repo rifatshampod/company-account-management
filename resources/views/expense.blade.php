@@ -31,6 +31,14 @@
           </div>
           <!-- /# row -->
           <section id="main-content">
+            @if (Session::get('status'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                  {{Session::get('status')}}
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+            @endif
             <div class="row">
               <div class="col-lg-12">
                 <div class="card">
@@ -50,20 +58,23 @@
                             <th>#</th>
                             <th>Name</th>
                             <th>Category</th>
-                            <th>Project/Client</th>
+                            <th>Project</th>
+                            <th>Client</th>
                             <th>Amount</th>
                             <th>Date</th>
                             <th>Action</th>
                           </tr>
                         </thead>
                         <tbody>
+                          @foreach ($expenselist as $item)
                           <tr>
-                            <td>01</td>
-                            <td>Domain</td>
-                            <td>Hosting</td>
-                            <td>Evocation</td>
-                            <td>$100</td>
-                            <td>20-04-2022</td>
+                            <td>{{$item['id']}}</td>
+                            <td>{{$item['name']}}</td>
+                            <td>{{$item['category']}}</td>
+                            <td>{{$item['project']}}</td>
+                            <td>{{$item['client']}}</td>
+                            <td>{{$item['amount']}}</td>
+                            <td>{{$item['date']}}</td>
                             <td>
                                 <div class="employeeTableIcon d-flex">
                                     <div class="employeeTableIconDiv Icon1 d-flex justify-content-center align-items-center mr-1" onclick="location.href='profile.html'" onclick="location.href='profile.html'">
@@ -78,70 +89,9 @@
                                 </div>
                             </td>
                           </tr>
+                          @endforeach
+                          
 
-                          <tr>
-                            <td>01</td>
-                            <td>Domain</td>
-                            <td>Hosting</td>
-                            <td>Evocation</td>
-                            <td>$100</td>
-                            <td>20-04-2022</td>
-                            <td>
-                                <div class="employeeTableIcon d-flex">
-                                    <div class="employeeTableIconDiv Icon1 d-flex justify-content-center align-items-center mr-1" onclick="location.href='profile.html'" onclick="location.href='profile.html'">
-                                        <i class="ti-eye"></i>
-                                    </div>
-                                    <div class="employeeTableIconDiv Icon2 d-flex justify-content-center align-items-center mr-1">
-                                        <i class="ti-trash"></i>
-                                    </div>
-                                    <div class="employeeTableIconDiv Icon3 d-flex justify-content-center align-items-center mr-1">
-                                        <i class="ti-pencil-alt"></i>
-                                    </div>
-                                </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>01</td>
-                            <td>Domain</td>
-                            <td>Hosting</td>
-                            <td>Evocation</td>
-                            <td>$100</td>
-                            <td>20-04-2022</td>
-                            <td>
-                                <div class="employeeTableIcon d-flex">
-                                    <div class="employeeTableIconDiv Icon1 d-flex justify-content-center align-items-center mr-1" onclick="location.href='profile.html'" onclick="location.href='profile.html'">
-                                        <i class="ti-eye"></i>
-                                    </div>
-                                    <div class="employeeTableIconDiv Icon2 d-flex justify-content-center align-items-center mr-1">
-                                        <i class="ti-trash"></i>
-                                    </div>
-                                    <div class="employeeTableIconDiv Icon3 d-flex justify-content-center align-items-center mr-1">
-                                        <i class="ti-pencil-alt"></i>
-                                    </div>
-                                </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>01</td>
-                            <td>Domain</td>
-                            <td>Hosting</td>
-                            <td>Evocation</td>
-                            <td>$100</td>
-                            <td>20-04-2022</td>
-                            <td>
-                                <div class="employeeTableIcon d-flex">
-                                    <div class="employeeTableIconDiv Icon1 d-flex justify-content-center align-items-center mr-1" onclick="location.href='profile.html'" onclick="location.href='profile.html'">
-                                        <i class="ti-eye"></i>
-                                    </div>
-                                    <div class="employeeTableIconDiv Icon2 d-flex justify-content-center align-items-center mr-1">
-                                        <i class="ti-trash"></i>
-                                    </div>
-                                    <div class="employeeTableIconDiv Icon3 d-flex justify-content-center align-items-center mr-1">
-                                        <i class="ti-pencil-alt"></i>
-                                    </div>
-                                </div>
-                            </td>
-                          </tr>
                         </tbody>
                       </table>
                     </div>

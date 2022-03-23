@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Account; 
+use App\Models\Transfer; 
+use App\Models\Expense; 
+use App\Models\Project; 
+use App\Models\Project_category; 
+use App\Models\Client; 
 
 class accountController extends Controller
 {
@@ -29,5 +34,138 @@ class accountController extends Controller
     {
         $accountList = Account::all();
         return view('account', ['accountlist' => $accountList]);
+    }
+
+    function showAccounts(Request $req)  //to show data in transfer form input field
+    {
+        $accountList = Account::all();
+        return view('addTransfer', ['accountlist' => $accountList]);
+    }
+
+    function saveTransferData(Request $req) //function to get the input data
+    {
+        $req->validate([
+            'from'=>'required',
+            'to'=>'required',
+            'amount'=>'required'
+        ]);
+        
+        $transfer = new Transfer; 
+        $transfer->account_from_id = $req->input('from');
+        $transfer->account_to_name = $req->input('to');
+        $transfer->amount = $req->input('amount');
+        $transfer->date = $req->input('date');
+        $transfer->save();
+        
+        $req->session()->flash('status','New transfer added successfully');
+        return redirect('transfer');
+
+    }
+
+    function retrieveTransferData(Request $req)
+    {
+        $projectList = Transfer::all();
+        $transferlist = Transfer::join('accounts', 'accounts.id', '=', 'transfers.account_from_id')
+              		// ->join('city', 'city.state_id', '=', 'state.state_id')
+              		->get();
+
+        return view('transfer', compact('transferlist'));
+        
+    }
+
+    //-------------expense---------------
+
+    function showExpenseAccounts(Request $req)  //to show data in transfer form input field
+    {
+        $categoryList = Project_category::all();
+        $clientList = Client::all();
+        $accountList = Account::all();
+        $projectList = Project::all();
+        return view('addExpense', ['categorylist' => $categoryList,'clientlist' => $clientList,'accountlist' => $accountList,'projectlist' => $projectList]);
+    }
+
+    function saveExpenseData(Request $req) //function to get the input data
+    {
+        $req->validate([
+            'name'=>'required',
+            'amount'=>'required'
+        ]);
+        
+        $expense = new Expense; 
+        $expense->name = $req->input('name');
+        $expense->category_id = $req->input('cat');
+        $expense->project_id = $req->input('project');
+        $expense->client_id = $req->input('client');
+        $expense->amount = $req->input('amount');
+        $expense->date = $req->input('date');
+        $expense->paid_from = $req->input('account');
+        //$expense->invoice = $req->input('date');
+        $expense->save();
+        
+        $req->session()->flash('status','New expense added successfully');
+        return redirect('expense');
+
+    }
+
+    function retrieveExpenseData(Request $req)
+    {
+        $allList = Expense::all();
+        $expenselist = Expense::join('accounts', 'accounts.id', '=', 'expenses.paid_from')
+              		->join('project_categories', 'project_categories.id', '=', 'expenses.category_id')
+                    ->join('projects', 'projects.id', '=', 'expenses.project_id')
+                    ->join('clients', 'clients.id', '=', 'expenses.client_id')
+              		->get(['expenses.id', 'expenses.name as name', 'projects.name as project', 'clients.name as client', 'accounts.name as account', 
+                      'project_categories.name as category', 'expenses.amount as amount', 'expenses.date as date', 'expenses.invoice as invoice']);
+
+        return view('expense', compact('expenselist'));
+        
+    }
+
+    //-------------income---------------
+
+    function showIncomeAccounts(Request $req)  //to show data in transfer form input field
+    {
+        $categoryList = Project_category::all();
+        $clientList = Client::all();
+        $accountList = Account::all();
+        $projectList = Project::all();
+        return view('addExpense', ['categorylist' => $categoryList,'clientlist' => $clientList,'accountlist' => $accountList,'projectlist' => $projectList]);
+    }
+
+    function saveIncomeData(Request $req) //function to get the input data
+    {
+        $req->validate([
+            'name'=>'required',
+            'amount'=>'required'
+        ]);
+        
+        $expense = new Expense; 
+        $expense->name = $req->input('name');
+        $expense->category_id = $req->input('cat');
+        $expense->project_id = $req->input('project');
+        $expense->client_id = $req->input('client');
+        $expense->amount = $req->input('amount');
+        $expense->date = $req->input('date');
+        $expense->paid_from = $req->input('account');
+        //$expense->invoice = $req->input('date');
+        $expense->save();
+        
+        $req->session()->flash('status','New expense added successfully');
+        return redirect('expense');
+
+    }
+
+    function retrieveIncomeData(Request $req)
+    {
+        $allList = Expense::all();
+        $expenselist = Expense::join('accounts', 'accounts.id', '=', 'expenses.paid_from')
+              		->join('project_categories', 'project_categories.id', '=', 'expenses.category_id')
+                    ->join('projects', 'projects.id', '=', 'expenses.project_id')
+                    ->join('clients', 'clients.id', '=', 'expenses.client_id')
+              		->get(['expenses.id', 'expenses.name as name', 'projects.name as project', 'clients.name as client', 'accounts.name as account', 
+                      'project_categories.name as category', 'expenses.amount as amount', 'expenses.date as date', 'expenses.invoice as invoice']);
+
+        return view('expense', compact('expenselist'));
+        
     }
 }

@@ -34,36 +34,41 @@
             <div class="row">
               <div class="col-lg-12">
                 <div class="card">
-                    <form action="transfer.html">
+                    <form action="addTransfer" method="POST">
+                      @csrf
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>From</label>
-                                    <select class="form-control input-default ">
-                                        <option>EBL</option>
-                                        <option>DBBL</option>
+                                    <select class="form-control input-default " name="from">
+                                      @foreach ($accountlist as $item)
+                                        <option value="{{$item['id']}}">{{$item['name']}}</option>
+                                      @endforeach
+                                        
+                                        
                                     </select>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>To</label>
-                                    <select class="form-control input-default ">
-                                        <option>EBL</option>
-                                        <option>DBBL</option>
+                                    <select class="form-control input-default " name="to">
+                                      @foreach ($accountlist as $item)
+                                        <option value="{{$item['name']}}">{{$item['name']}}</option>
+                                      @endforeach
                                     </select>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>Amount</label>
-                                    <input type="number" class="form-control input-default" placeholder="Amount" required>
+                                    <input type="number" name="amount" class="form-control input-default" placeholder="Amount" required>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>Date</label>
-                                    <input type="date" class="form-control input-default" placeholder="date" required>
+                                    <input type="date" name="date" class="form-control input-default" placeholder="date" required>
                                 </div>
                             </div>
                         </div>

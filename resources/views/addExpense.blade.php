@@ -34,69 +34,72 @@
             <div class="row">
               <div class="col-lg-12">
                 <div class="card">
-                    <form action="expense.html">
+                    <form action="addExpense" method="POST">
+                      @csrf
                         <div class="row justify-content-center">
                             <div class="col-lg-12">
                                 <div class="form-group">
                                     <label> Expense Name</label>
-                                    <input type="text" class="form-control input-default" placeholder="Expense Name" required>
+                                    <input type="text" name="name" class="form-control input-default" placeholder="Expense Name" required>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>Expense Category</label>
-                                    <select class="form-control input-default ">
-                                        <option>1</option>
-                                        <option>2</option>
+                                    <select class="form-control input-default" name="cat">
+                                      @foreach ($categorylist as $item)
+                                      <option value="{{$item['id']}}">{{$item['name']}}</option>
+                                      @endforeach
                                     </select>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>Project</label>
-                                    <select class="form-control input-default ">
-                                        <option>1</option>
-                                        <option>2</option>
+                                    <select class="form-control input-default " name="project"> 
+                                      @foreach ($projectlist as $item)
+                                      <option value="{{$item['id']}}">{{$item['name']}}</option>
+                                      @endforeach
                                     </select>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>Client</label>
-                                    <select class="form-control input-default ">
-                                        <option>1</option>
-                                        <option>2</option>
+                                    <select class="form-control input-default " name="client">
+                                      @foreach ($clientlist as $item)
+                                      <option value="{{$item['id']}}">{{$item['name']}}</option>
+                                      @endforeach
                                     </select>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>Amount</label>
-                                    <input type="number" class="form-control input-default" placeholder="Amount" required>
+                                    <input type="number" name="amount" class="form-control input-default" placeholder="Amount" required>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>Date</label>
-                                    <input type="date" class="form-control input-default" placeholder="Phone Number" required>
+                                    <input type="date" name="date" class="form-control input-default" placeholder="Phone Number" required>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>Paid From</label>
-                                    <select class="form-control input-default">
-                                        <option>1</option>
-                                        <option>2</option>
+                                    <select class="form-control input-default" name="account">
+                                      @foreach ($accountlist as $item)
+                                      <option value="{{$item['id']}}">{{$item['name']}}</option>
+                                      @endforeach
                                     </select>
                                 </div>
                             </div>
                             <div class="col-lg-4">
-                                <form>
                                     <div class="form-group uploadFile p-4">
                                       <label for="exampleFormControlFile1">Invoice upload</label>
-                                      <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                      <input type="file" name="invoice" class="form-control-file" id="exampleFormControlFile1">
                                     </div>
-                                  </form>
                             </div>
                         </div>
                         <div class="row justify-content-center">
