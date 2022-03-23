@@ -49,7 +49,7 @@
                           <tr>
                             <th>#</th>
                             <th>Project Name</th>
-                            <th>Amount</th>
+                            <th>Total Budget</th>
                             <th>Date</th>
                             <th>Account</th>
                             <th>Profit</th>
@@ -57,13 +57,14 @@
                           </tr>
                         </thead>
                         <tbody>
+                          @foreach ($incomelist as $item)
                           <tr>
-                            <td>01</td>
-                            <td>Evocation</td>
-                            <td>$1000</td>
-                            <td>20-04-2022</td>
-                            <td>Db-456728</td>
-                            <td>$500</td>
+                            <td>{{$item['id']}}</td>
+                            <td>{{$item['project']}}</td>
+                            <td>{{$item['amount']}}</td>
+                            <td>{{$item['date']}}</td>
+                            <td>{{$item['account']}}</td>
+                            <td>{{$item['amount']-$item['expense']}}</td>
                             <td>
                                 <div class="employeeTableIcon d-flex">
                                     <div class="employeeTableIconDiv Icon1 d-flex justify-content-center align-items-center mr-1" onclick="location.href='profile.html'" onclick="location.href='profile.html'">
@@ -75,60 +76,9 @@
                                 </div>
                             </td>
                           </tr>
-                          <tr>
-                            <td>01</td>
-                            <td>Evocation</td>
-                            <td>$1000</td>
-                            <td>20-04-2022</td>
-                            <td>Db-456728</td>
-                            <td>$500</td>
-                            <td>
-                                <div class="employeeTableIcon d-flex">
-                                    <div class="employeeTableIconDiv Icon1 d-flex justify-content-center align-items-center mr-1" onclick="location.href='profile.html'" onclick="location.href='profile.html'">
-                                        <i class="ti-eye"></i>
-                                    </div>
-                                    <div class="employeeTableIconDiv Icon3 d-flex justify-content-center align-items-center mr-1">
-                                        <i class="ti-pencil-alt"></i>
-                                    </div>
-                                </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>01</td>
-                            <td>Evocation</td>
-                            <td>$1000</td>
-                            <td>20-04-2022</td>
-                            <td>Db-456728</td>
-                            <td>$500</td>
-                            <td>
-                                <div class="employeeTableIcon d-flex">
-                                    <div class="employeeTableIconDiv Icon1 d-flex justify-content-center align-items-center mr-1" onclick="location.href='profile.html'" onclick="location.href='profile.html'">
-                                        <i class="ti-eye"></i>
-                                    </div>
-                                    <div class="employeeTableIconDiv Icon3 d-flex justify-content-center align-items-center mr-1">
-                                        <i class="ti-pencil-alt"></i>
-                                    </div>
-                                </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>01</td>
-                            <td>Evocation</td>
-                            <td>$1000</td>
-                            <td>20-04-2022</td>
-                            <td>Db-456728</td>
-                            <td>$500</td>
-                            <td>
-                                <div class="employeeTableIcon d-flex">
-                                    <div class="employeeTableIconDiv Icon1 d-flex justify-content-center align-items-center mr-1" onclick="location.href='profile.html'" onclick="location.href='profile.html'">
-                                        <i class="ti-eye"></i>
-                                    </div>
-                                    <div class="employeeTableIconDiv Icon3 d-flex justify-content-center align-items-center mr-1">
-                                        <i class="ti-pencil-alt"></i>
-                                    </div>
-                                </div>
-                            </td>
-                          </tr>
+                          @endforeach
+                          
+
                         </tbody>
                       </table>
                     </div>

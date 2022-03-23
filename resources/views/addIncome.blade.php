@@ -34,45 +34,56 @@
             <div class="row">
               <div class="col-lg-12">
                 <div class="card">
-                    <form action="project.html">
+                  <form action="addIncome" method="POST">
+                    @csrf
                         <div class="row justify-content-center">
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label> Project Name</label>
-                                    <input type="text" class="form-control input-default" placeholder="Expense Name" required>
-                                </div>
+                          <div class="col-lg-6">
+                            <div class="form-group">
+                                <label>Project Name</label>
+                                <select class="form-control input-default " name="project"> 
+                                  @foreach ($projectlist as $item)
+                                  <option value="{{$item['id']}}">{{$item['name']}}</option>
+                                  @endforeach
+                                </select>
                             </div>
+                          </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>Amount</label>
-                                    <input type="number" class="form-control input-default" placeholder="Amount" required>
+                                    <input type="number" name="amount" class="form-control input-default" placeholder="Amount" required>
                                 </div>
                             </div>
+                            
                             <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label>Category</label>
-                                    <select class="form-control input-default">
-                                        <option>1</option>
-                                        <option>2</option>
-                                    </select>
-                                </div>
+                              <div class="form-group">
+                                  <label>Income Category</label>
+                                  <select class="form-control input-default" name="cat">
+                                    @foreach ($categorylist as $item)
+                                    <option value="{{$item['id']}}">{{$item['name']}}</option>
+                                    @endforeach
+                                  </select>
+                              </div>
                             </div>
                             <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label>Account</label>
-                                    <input type="text" class="form-control input-default" placeholder="Account no" required>
-                                </div>
+                              <div class="form-group">
+                                  <label>Paid To </label>
+                                  <select class="form-control input-default" name="account">
+                                    @foreach ($accountlist as $item)
+                                    <option value="{{$item['id']}}">{{$item['name']}}</option>
+                                    @endforeach
+                                  </select>
+                              </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>Date</label>
-                                    <input type="date" class="form-control input-default" placeholder="Phone Number" required>
+                                    <input type="date" name="date" class="form-control input-default" placeholder="Phone Number" required>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>Expense</label>
-                                    <input type="number" class="form-control input-default" placeholder="Expense" required>
+                                    <input type="number" name="expense" class="form-control input-default" placeholder="Expense" required>
                                 </div>
                             </div>
                         </div>

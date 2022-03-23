@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\clientController;
 use App\Http\Controllers\projectController;
 use App\Http\Controllers\accountController;
+use App\Http\Controllers\dashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,13 +17,13 @@ use App\Http\Controllers\accountController;
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard');
-});
+// Route::get('/', function () {          //index page
+//     return view('dashboard');
+// });
 
 //-------------Static view Routes
 
-Route::view('dashboard','dashboard');
+// Route::view('dashboard','dashboard');
 //Route::view('clients','client');
 Route::view('create-client','addClient');
 // Route::view('projects','project');
@@ -47,6 +48,11 @@ Route::view('single-project','singleProjectView');
 
 
 //-------------- controller routes----------------------------------------------------------------------------------------------
+
+//dashboard
+Route::get("/", [dashboardController::class, 'dataCount']);  //show all data counts in dashboard
+Route::get("dashboard", [dashboardController::class, 'dataCount']);
+
 //client
 Route::post("addClient", [clientController::class, 'saveData']); // add client to database
 Route::get("clients", [clientController::class, 'retrieveData']);  //show all clients in client page

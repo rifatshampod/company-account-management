@@ -40,7 +40,7 @@
                     </div>
                     <div class="stat-content dib">
                       <div class="stat-text">Clients</div>
-                      <div class="stat-digit">1,012</div>
+                      <div class="stat-digit">{{$client}}</div>
                     </div>
                   </div>
                 </div>
@@ -53,7 +53,7 @@
                     </div>
                     <div class="stat-content dib">
                       <div class="stat-text">Projects</div>
-                      <div class="stat-digit">961</div>
+                      <div class="stat-digit">{{$project}}</div>
                     </div>
                   </div>
                 </div>
@@ -66,7 +66,7 @@
                     </div>
                     <div class="stat-content dib">
                       <div class="stat-text">Income</div>
-                      <div class="stat-digit">770</div>
+                      <div class="stat-digit">{{$income}}</div>
                     </div>
                   </div>
                 </div>
@@ -79,7 +79,7 @@
                     </div>
                     <div class="stat-content dib">
                       <div class="stat-text">Expense</div>
-                      <div class="stat-digit">2,781</div>
+                      <div class="stat-digit">{{$expense}}</div>
                     </div>
                   </div>
                 </div>
