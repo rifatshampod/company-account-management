@@ -34,24 +34,25 @@
             <div class="row">
               <div class="col-lg-12">
                 <div class="card">
-                    <form action="account.html">
+                    <form action="addAccount" method="post">
+                      @csrf 
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>Name</label>
-                                    <input type="text" class="form-control input-default" placeholder="Name" required>
+                                    <input type="text" name="name" class="form-control input-default" placeholder="Name" required>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>InCharge</label>
-                                    <input type="text" class="form-control input-default" placeholder="Incharge Name" required>
+                                    <input type="text" name="incharge" class="form-control input-default" placeholder="Incharge Name" required>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="form-group">
                                     <label class=" control-label">Details</label>
-                                        <textarea class="form-control input-default" rows="2" placeholder="Details" required></textarea>
+                                        <textarea name="details" class="form-control input-default" rows="2" placeholder="Details" required></textarea>
                                 </div>
                             </div>
                         </div>

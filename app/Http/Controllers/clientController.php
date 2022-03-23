@@ -16,7 +16,7 @@ class clientController extends Controller
         ]);
         
         $client = new Client;
-        $client->client_name = $req->input('name');
+        $client->name = $req->input('name');
         $client->client_id = $req->input('cid');
         $client->company = $req->input('company');
         $client->country = $req->input('country');
