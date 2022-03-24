@@ -40,46 +40,50 @@
                 <div class="card pl-5 py-5">
                     <div class="d-flex mb-5">
                         <div class="w-20">
-                            <h5>Client Name</h5>
-                            <p>Saiful Islam</p>
+
+                          
+                          <h5>Client Name</h5>
+                          <p>{{$clients->name}}</p>
+                          
+                            
                         </div>
                         <div class="w-20">
                             <h5>Client ID</h5>
-                            <p>EBS1012</p>
+                            <p>{{$clients->client_id}}</p>
                         </div>
                         <div class="w-20">
                             <h5>Company</h5>
-                            <p>Invicta Solutions</p>
+                            <p>{{$clients->company}}</p>
                         </div>
                         <div class="w-20">
                             <h5>Country</h5>
-                            <p>Bangladesh</p>
+                            <p>{{$clients->country}}</p>
                         </div>
                         <div class="w-20">
                             <h5>Status</h5>
-                            <p>Active</p>
+                            <p>{{$clients->status}}</p>
                         </div>
                     </div>
                     <div class="d-flex mb-5">
                         <div class="w-20">
                             <h5>Email</h5>
-                            <p>saiful@gmail.com</p>
+                            <p>{{$clients->email}}</p>
                         </div>
                         <div class="w-20">
                             <h5>Phone</h5>
-                            <p>01658989654</p>
+                            <p>{{$clients->phone}}</p>
                         </div>
                         <div class="w-20">
                             <h5>WhatsApp</h5>
-                            <p>+8801658989654</p>
+                            <p>{{$clients->whatsapp}}</p>
                         </div>
                         <div class="w-20">
                             <h5>Address</h5>
-                            <p>47 Noya paltan, <br> Dhaka 1200</p>
+                            <p>{{$clients->address}}</p>
                         </div>
                         <div class="w-20">
                             <h5>Type</h5>
-                            <p>Client</p>
+                            <p>{{$clients->category}}</p>
                         </div>
                     </div>
                     <div class="mb-2">

@@ -39,5 +39,18 @@ class clientController extends Controller
         return view('client', ['clientlist' => $clientList]);
     }
 
+    function clientView($client_slug)
+    {
+        if(Client::where('id',$client_slug)->exists())
+        {
+            $clients = Client::where('id',$client_slug)->first();
+            return view('singleClientView')->with('clients',$clients);
+        }
+        else{
+
+            return redirect('/')->with('status',"The link is broken");
+        }
+    }
+
     
 }

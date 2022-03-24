@@ -85,5 +85,11 @@ Route::get('add-income',[accountController::class, 'showIncomeAccounts']); //sho
 Route::post("addIncome", [accountController::class, 'saveIncomeData']); // add client to database
 Route::get("income", [accountController::class, 'retrieveIncomeData']);  //show all clients in client page
 
+//single client
+Route::get('single-client={client_slug}', [clientController::class, 'clientView']);
+
+//single project
+Route::get('single-project={project_slug}', [projectController::class, 'projectView']);
+
 
 //-------------- controller routes----------------------------------------------------------------------------------------------

@@ -74,9 +74,11 @@
                             <td>{{$item['status']}}</td>
                             <td>
                                 <div class="employeeTableIcon d-flex">
-                                    <div class="employeeTableIconDiv Icon1 d-flex justify-content-center align-items-center mr-1" onclick="location.href='profile.html'" onclick="location.href='profile.html'">
+                                  <a href="{{url('single-project='.$item['id'])}}">
+                                    <div class="employeeTableIconDiv Icon1 d-flex justify-content-center align-items-center mr-1">
                                         <i class="ti-eye"></i>
                                     </div>
+                                  </a>
                                     <div class="employeeTableIconDiv Icon2 d-flex justify-content-center align-items-center mr-1">
                                         <i class="ti-trash"></i>
                                     </div>

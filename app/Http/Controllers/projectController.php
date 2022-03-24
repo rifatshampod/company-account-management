@@ -74,5 +74,19 @@ class projectController extends Controller
         return view('project', compact('data'));
     }
 
+    function projectView($project_slug)
+    {
+        if(Project::where('id',$project_slug)->exists())
+        {
+            $projects = Project::where('id',$project_slug)->first();
+            return view('singleProjectView')->with('projects',$projects);
+        }
+        else{
+
+            return redirect('/')->with('status',"The link is broken");
+        }
+    }
+
+
 
 }

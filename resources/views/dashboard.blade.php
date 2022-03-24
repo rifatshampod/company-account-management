@@ -103,18 +103,19 @@
                             <th>Client Name</th>
                             <th>Renewal</th>
                             <th>Renewal Date</th>
-                            <th>Status</th>
+                            <th>Payment Status</th>
                             <th>Action</th>
                           </tr>
                         </thead>
                         <tbody>
+                          @foreach ($data as $item)
                           <tr>
-                            <td>01</td>
-                            <td>Evocation</td>
-                            <td>Arif Bipu</td>
-                            <td>Yearly</td>
-                            <td>20-04-2022</td>
-                            <td>Advance</td>
+                            <td>{{$item['id']}}</td>
+                            <td>{{$item['name']}}</td>
+                            <td>{{$item['client_name']}}</td>
+                            <td>{{$item['renewal']}}</td>
+                            <td>{{$item['renewal_date']}}</td>
+                            <td>{{$item['status']}}</td>
                             <td>
                                 <div class="employeeTableIcon d-flex">
                                     <div class="employeeTableIconDiv Icon1 d-flex justify-content-center align-items-center mr-1" onclick="location.href='profile.html'" onclick="location.href='profile.html'">
@@ -129,72 +130,18 @@
                                 </div>
                             </td>
                           </tr>
+                          @endforeach
+                          
 
-                          <tr>
-                            <td>01</td>
-                            <td>Evocation</td>
-                            <td>Arif Bipu</td>
-                            <td>Yearly</td>
-                            <td>20-04-2022</td>
-                            <td>Advance</td>
-                            <td>
-                                <div class="employeeTableIcon d-flex">
-                                    <div class="employeeTableIconDiv Icon1 d-flex justify-content-center align-items-center mr-1" onclick="location.href='profile.html'" onclick="location.href='profile.html'">
-                                        <i class="ti-eye"></i>
-                                    </div>
-                                    <div class="employeeTableIconDiv Icon2 d-flex justify-content-center align-items-center mr-1">
-                                        <i class="ti-trash"></i>
-                                    </div>
-                                    <div class="employeeTableIconDiv Icon3 d-flex justify-content-center align-items-center mr-1">
-                                        <i class="ti-pencil-alt"></i>
-                                    </div>
-                                </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>01</td>
-                            <td>Evocation</td>
-                            <td>Arif Bipu</td>
-                            <td>Yearly</td>
-                            <td>20-04-2022</td>
-                            <td>Advance</td>
-                            <td>
-                                <div class="employeeTableIcon d-flex">
-                                    <div class="employeeTableIconDiv Icon1 d-flex justify-content-center align-items-center mr-1" onclick="location.href='profile.html'" onclick="location.href='profile.html'">
-                                        <i class="ti-eye"></i>
-                                    </div>
-                                    <div class="employeeTableIconDiv Icon2 d-flex justify-content-center align-items-center mr-1">
-                                        <i class="ti-trash"></i>
-                                    </div>
-                                    <div class="employeeTableIconDiv Icon3 d-flex justify-content-center align-items-center mr-1">
-                                        <i class="ti-pencil-alt"></i>
-                                    </div>
-                                </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>01</td>
-                            <td>Evocation</td>
-                            <td>Arif Bipu</td>
-                            <td>Yearly</td>
-                            <td>20-04-2022</td>
-                            <td>Advance</td>
-                            <td>
-                                <div class="employeeTableIcon d-flex">
-                                    <div class="employeeTableIconDiv Icon1 d-flex justify-content-center align-items-center mr-1" onclick="location.href='profile.html'" onclick="location.href='profile.html'">
-                                        <i class="ti-eye"></i>
-                                    </div>
-                                    <div class="employeeTableIconDiv Icon2 d-flex justify-content-center align-items-center mr-1">
-                                        <i class="ti-trash"></i>
-                                    </div>
-                                    <div class="employeeTableIconDiv Icon3 d-flex justify-content-center align-items-center mr-1">
-                                        <i class="ti-pencil-alt"></i>
-                                    </div>
-                                </div>
-                            </td>
-                          </tr>
+                          
                         </tbody>
                       </table>
+                      <br>
+                    <!-- --------------------------------- pagination ------------------------>
+                      <div class="pagination d-flex justify-content-center align-items-center">
+                        {{$data->links('vendor.pagination.bootstrap-4')}}
+                      </div>
+                    <!-- --------------------------------- pagination ------------------------>
                     </div>
                   </div>
                 </div>
@@ -210,7 +157,17 @@
                         </div>
                       </div>
                       <div class="panel-body">
-                        <canvas id="doughutChart"></canvas>
+                        <canvas id="doughutChart">
+                          <div id="web">
+                            20
+                          </div class="app">
+                          <div>
+                            20
+                          </div>
+                          <div class="ux">
+                            60
+                          </div>
+                        </canvas> 
                       </div>
                     </div>
                   </div>

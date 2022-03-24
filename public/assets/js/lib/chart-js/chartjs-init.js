@@ -302,13 +302,17 @@
 
   //doughut chart
   var ctx = document.getElementById("doughutChart");
+  // var web = document.getElementById(".web");
+  // var web1 = web.innerBLADE;
+  // var app = document.querySelector(".app").innerHTML;
+  // var ux = document.querySelector(".ux").innerHTML;
   ctx.height = 250;
   var myChart = new Chart(ctx, {
     type: "doughnut",
     data: {
       datasets: [
         {
-          data: [45, 25, 20],
+          data: [45, 5, 50],
           backgroundColor: [
             "rgba(0, 123, 255,0.9)",
             "rgba(0, 123, 255,0.7)",

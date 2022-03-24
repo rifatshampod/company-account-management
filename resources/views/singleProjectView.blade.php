@@ -41,23 +41,23 @@
                     <div class="d-flex mb-5">
                         <div class="w-20">
                             <h5>Project Title</h5>
-                            <p>Invicta Official Website</p>
+                            <p>{{$projects->name}}</p>
                         </div>
                         <div class="w-20">
                             <h5>Category</h5>
-                            <p>Web Development</p>
+                            <p>{{$projects->category_id}}</p>
                         </div>
                         <div class="w-20">
                             <h5>Payment status</h5>
-                            <p>Advance Paid</p>
+                            <p>{{$projects->status}}</p>
                         </div>
                         <div class="w-20">
                             <h5>Start Date</h5>
-                            <p>13-03-2022</p>
+                            <p>{{$projects->start_date}}</p>
                         </div>
                         <div class="w-20">
                             <h5>End Date</h5>
-                            <p>30-04-2022</p>
+                            <p>{{$projects->due_date}}</p>
                         </div>
                     </div>
                     <hr>
@@ -67,23 +67,23 @@
                     <div class="d-flex mb-5">
                         <div class="w-20">
                             <h5>Client Name</h5>
-                            <p>Saiful Islam</p>
+                            <p>{{$projects->name}}</p>
                         </div>
                         <div class="w-20">
                             <h5>Client ID</h5>
-                            <p>EBS1012</p>
+                            <p>{{$projects->name}}</p>
                         </div>
                         <div class="w-20">
                             <h5>Company</h5>
-                            <p>Invicta solutions</p>
+                            <p>{{$projects->name}}</p>
                         </div>
                         <div class="w-20">
                             <h5>Country</h5>
-                            <p>Bangladesh</p>
+                            <p>{{$projects->name}}</p>
                         </div>
                         <div class="w-20">
                             <h5>Status</h5>
-                            <p>Active</p>
+                            <p>{{$projects->name}}</p>
                         </div>
                     </div>
                     <hr>
@@ -93,23 +93,23 @@
                     <div class="d-flex">
                         <div class="w-20">
                             <h5>Budget</h5>
-                            <p>BDT 25000</p>
+                            <p>{{$projects->budget}}</p>
                         </div>
                         <div class="w-20">
                             <h5>Paid</h5>
-                            <p>BDT 10000</p>
+                            <p>{{$projects->advance}}</p>
                         </div>
                         <div class="w-20">
                             <h5>Due</h5>
-                            <p>BDT 15000</p>
+                            <p>{{$projects->budget - $projects->advance}}</p>
                         </div>
                         <div class="w-20">
                             <h5>Yearly Renewal</h5>
-                            <p>BDT 5400</p>
+                            <p>{{$projects->renewal}}</p>
                         </div>
                         <div class="w-20">
                             <h5>Renewal Date</h5>
-                            <p>23-03-2023</p>
+                            <p>{{$projects->next_renewal_date}}</p>
                         </div>
                     </div>
                 </div>
