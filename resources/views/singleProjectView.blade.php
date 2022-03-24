@@ -45,7 +45,7 @@
                         </div>
                         <div class="w-20">
                             <h5>Category</h5>
-                            <p>{{$projects->category_id}}</p>
+                            <p>{{$projects->category}}</p>
                         </div>
                         <div class="w-20">
                             <h5>Payment status</h5>
@@ -67,23 +67,23 @@
                     <div class="d-flex mb-5">
                         <div class="w-20">
                             <h5>Client Name</h5>
-                            <p>{{$projects->name}}</p>
+                            <p>{{$projects->client_name}}</p>
                         </div>
                         <div class="w-20">
                             <h5>Client ID</h5>
-                            <p>{{$projects->name}}</p>
+                            <p>{{$projects->client_unique_id}}</p>
                         </div>
                         <div class="w-20">
                             <h5>Company</h5>
-                            <p>{{$projects->name}}</p>
+                            <p>{{$projects->client_company}}</p>
                         </div>
                         <div class="w-20">
                             <h5>Country</h5>
-                            <p>{{$projects->name}}</p>
+                            <p>{{$projects->client_country}}</p>
                         </div>
                         <div class="w-20">
                             <h5>Status</h5>
-                            <p>{{$projects->name}}</p>
+                            <p>{{$projects->client_status}}</p>
                         </div>
                     </div>
                     <hr>

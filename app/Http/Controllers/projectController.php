@@ -78,7 +78,11 @@ class projectController extends Controller
     {
         if(Project::where('id',$project_slug)->exists())
         {
-            $projects = Project::where('id',$project_slug)->first();
+            $projects = Project::join('project_categories','project_categories.id', '=', 'projects.category_id')
+            ->join('clients', 'clients.id', '=', 'projects.client_id')
+            ->get(['projects.id','projects.name as name', 'project_categories.name as category','projects.renewal as renewal','projects.next_renewal_date as next_renewal_date', 'projects.status as status','projects.start_date as start_date','projects.due_date as due_date','projects.budget as budget','projects.advance as advance',
+            'clients.name as client_name','clients.client_id as client_unique_id','clients.company as client_company','clients.country as client_country','clients.status as client_status'])
+            ->where('id',$project_slug)->first();
             return view('singleProjectView')->with('projects',$projects);
         }
         else{
