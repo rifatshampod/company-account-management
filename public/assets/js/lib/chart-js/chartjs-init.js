@@ -302,10 +302,9 @@
 
   //doughut chart
   var ctx = document.getElementById("doughutChart");
-  // var web = document.getElementById(".web");
-  // var web1 = web.innerBLADE;
-  // var app = document.querySelector(".app").innerHTML;
-  // var ux = document.querySelector(".ux").innerHTML;
+  // const web = document.querySelector(".web").innerHTML;
+  // const app = document.querySelector(".app").innerHTML;
+  // const ux = document.querySelector(".ux").innerHTML;
   ctx.height = 250;
   var myChart = new Chart(ctx, {
     type: "doughnut",

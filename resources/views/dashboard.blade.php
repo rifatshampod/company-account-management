@@ -157,17 +157,9 @@
                         </div>
                       </div>
                       <div class="panel-body">
-                        <canvas id="doughutChart">
-                          <div id="web">
-                            20
-                          </div class="app">
-                          <div>
-                            20
-                          </div>
-                          <div class="ux">
-                            60
-                          </div>
-                        </canvas> 
+                         <!-- Chart's container -->
+                        <div id="chart" style="height: 300px;"></div>
+                       
                       </div>
                     </div>
                   </div>
@@ -185,7 +177,7 @@
                         </div>
                       </div>
                       <div class="panel-body">
-                        <canvas id="doughutChart2"></canvas>
+                        <div id="chart2" style="height: 300px;"></div>
                       </div>
                     </div>
                   </div>
@@ -228,6 +220,35 @@
         </div>
       </div>
     </div>
+    
+     <!-- Charting library -->
+     <script src="https://unpkg.com/echarts/dist/echarts.min.js"></script>
+     <!-- Chartisan -->
+     <script src="https://unpkg.com/@chartisan/echarts/dist/chartisan_echarts.js"></script>
+     <!-- Your application script -->
+     <script>
+       const chart = new Chartisan({
+         el: '#chart2',
+         url: "@chart('expense_chart')",
+         hooks: new ChartisanHooks()
+         .datasets('pie')
+         .legend()
+         .colors()
+         .tooltip()
+         .axis(false)                         
+       });
+
+       const chart2 = new Chartisan({
+         el: '#chart',
+         url: "@chart('sample_chart')",
+         hooks: new ChartisanHooks()
+         .datasets('pie')
+         .legend()
+         .colors()
+         .tooltip()
+         .axis(false)                         
+       });
+     </script>
 
     <!-- jquery vendor -->
     <script src="assets/js/lib/jquery.min.js"></script>

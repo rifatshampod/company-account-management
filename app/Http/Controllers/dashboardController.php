@@ -22,9 +22,17 @@ class dashboardController extends Controller
               		// ->join('city', 'city.state_id', '=', 'state.state_id')
               		// ->get(['projects.id','projects.name as name', 'clients.name as client_name','projects.renewal as renewal','projects.next_renewal_date as renewal_date', 'projects.status as status'])
                     ->paginate(5, array('projects.id','projects.name as name', 'clients.name as client_name','projects.renewal as renewal','projects.next_renewal_date as renewal_date', 'projects.status as status'));
+        
+        $categories = ['45','20','35'];
+        //$user = ['2015','2016','2017','2018','2019','2020'];
 
+        // $user = [];
+        // foreach ($year as $key => $value) 
+        // {
+        //     $user[] = User::where(\DB::raw("DATE_FORMAT(created_at, '%Y')"),$value)->count();
+        // }
 
-        return view("dashboard",compact('client','project','income','expense', 'data'));
+        return view("dashboard",compact('client','project','income','expense', 'data', 'categories'));
     }
 
 }
