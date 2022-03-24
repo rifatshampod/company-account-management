@@ -77,10 +77,11 @@
                             <h5>WhatsApp</h5>
                             <p>{{$clients->whatsapp}}</p>
                         </div>
-                        <div class="w-20">
+                        <div class="w-15">
                             <h5>Address</h5>
                             <p>{{$clients->address}}</p>
                         </div>
+                        <div class="w-5"></div>  <!--  extra space to differentiate address and type-->
                         <div class="w-20">
                             <h5>Type</h5>
                             <p>{{$clients->category}}</p>
@@ -105,62 +106,28 @@
                               </tr>
                             </thead>
                             <tbody>
+                              @foreach ($projects as $item)
                               <tr>
-                                <td>Invicta</td>
-                                <td>BDT 25000</td>
-                                <td>Bdt 15000</td>
-                                <td>BDT 5400</td>
-                                <td>20-04-2022</td>
+                                <td>{{$item['project_name']}}</td>
+                                <td>{{$item['budget']}}</td>
+                                <td>{{$item['budget']-$item['advance']}}</td>
+                                <td>{{$item['renewal_charge']}}</td>
+                                <td>{{$item['next_renewal_date']}}</td>
                                 <td>
+                                  
                                     <div class="employeeTableIcon">
-                                        <div class="employeeTableIconDiv Icon1 d-flex justify-content-center align-items-center mr-1" onclick="location.href='profile.html'" onclick="location.href='profile.html'">
+                                      <a href="{{url('single-project='.$item['id'])}}">
+                                        <div class="employeeTableIconDiv Icon1 d-flex justify-content-center align-items-center mr-1">
                                             <i class="ti-eye"></i>
                                         </div>
+                                      </a>
                                     </div>
+                                  
                                 </td>
                               </tr>
-                              <tr>
-                                <td>Invicta</td>
-                                <td>BDT 25000</td>
-                                <td>Bdt 15000</td>
-                                <td>BDT 5400</td>
-                                <td>20-04-2022</td>
-                                <td>
-                                    <div class="employeeTableIcon">
-                                        <div class="employeeTableIconDiv Icon1 d-flex justify-content-center align-items-center mr-1" onclick="location.href='profile.html'" onclick="location.href='profile.html'">
-                                            <i class="ti-eye"></i>
-                                        </div>
-                                    </div>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>Invicta</td>
-                                <td>BDT 25000</td>
-                                <td>Bdt 15000</td>
-                                <td>BDT 5400</td>
-                                <td>20-04-2022</td>
-                                <td>
-                                    <div class="employeeTableIcon">
-                                        <div class="employeeTableIconDiv Icon1 d-flex justify-content-center align-items-center mr-1" onclick="location.href='profile.html'" onclick="location.href='profile.html'">
-                                            <i class="ti-eye"></i>
-                                        </div>
-                                    </div>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>Invicta</td>
-                                <td>BDT 25000</td>
-                                <td>Bdt 15000</td>
-                                <td>BDT 5400</td>
-                                <td>20-04-2022</td>
-                                <td>
-                                    <div class="employeeTableIcon">
-                                        <div class="employeeTableIconDiv Icon1 d-flex justify-content-center align-items-center mr-1" onclick="location.href='profile.html'" onclick="location.href='profile.html'">
-                                            <i class="ti-eye"></i>
-                                        </div>
-                                    </div>
-                                </td>
-                              </tr>
+                              @endforeach
+                              
+                             
                             </tbody>
                           </table>
                         </div>

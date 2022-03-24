@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Client;
+use App\Models\Project;
 
 class clientController extends Controller
 {
@@ -44,7 +45,12 @@ class clientController extends Controller
         if(Client::where('id',$client_slug)->exists())
         {
             $clients = Client::where('id',$client_slug)->first();
-            return view('singleClientView')->with('clients',$clients);
+            $projects = $data = Project::join('clients', 'clients.id', '=', 'projects.client_id')
+            // ->join('city', 'city.state_id', '=', 'state.state_id')
+            ->get(['projects.id as id','projects.name as project_name','projects.budget', 'projects.advance','projects.renewal_charge','projects.next_renewal_date','projects.client_id as client_id' ])
+            ->where('client_id',$client_slug);
+
+            return view('singleClientView',compact('projects'))->with('clients',$clients);
         }
         else{
 
