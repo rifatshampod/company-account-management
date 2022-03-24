@@ -90,12 +90,13 @@
                 <div class="card">
                   <div class="card-title">
                     <h4>Total Projects</h4>
+                  
                   </div>
                   <div class="card-body">
-                    <div class="table-responsive">
+                    <div class="table-responsive table-bordered">
                     <table
                         id="bootstrap-data-table-export"
-                        class="table table-striped table-bordered">
+                        class="table table-striped">
                         <thead>
                           <tr>
                             <th>#</th>
@@ -131,18 +132,18 @@
                             </td>
                           </tr>
                           @endforeach
-                          
-
-                          
                         </tbody>
                       </table>
-                      <br>
-                    <!-- --------------------------------- pagination ------------------------>
-                      <div class="pagination d-flex justify-content-center align-items-center">
-                        {{$data->links('vendor.pagination.bootstrap-4')}}
-                      </div>
-                    <!-- --------------------------------- pagination ------------------------>
+                    
                     </div>
+                    <br>
+
+                                        <!-- --------------------------------- pagination ------------------------>
+                                        <div class="pagination d-flex justify-content-center align-items-center">
+                                          {{$data->links('vendor.pagination.bootstrap-4')}}
+                                        </div>
+                                      <!-- --------------------------------- pagination ------------------------>
+
                   </div>
                 </div>
               </div>
@@ -193,7 +194,7 @@
                         </div>
                       </div>
                       <div class="panel-body">
-                        <canvas id="doughutChart3"></canvas>
+                        <div id="chart3" style="height: 300px;"></div>
                       </div>
                     </div>
                   </div>
@@ -209,7 +210,7 @@
                         </div>
                       </div>
                       <div class="panel-body">
-                        <canvas id="doughutChart4"></canvas>
+                        <div id="chart4" style="height: 300px;"></div>
                       </div>
                     </div>
                   </div>
@@ -227,7 +228,18 @@
      <script src="https://unpkg.com/@chartisan/echarts/dist/chartisan_echarts.js"></script>
      <!-- Your application script -->
      <script>
+       
        const chart = new Chartisan({
+         el: '#chart',
+         url: "@chart('sample_chart')",
+         hooks: new ChartisanHooks()
+         .datasets('pie')
+         .legend()
+         .colors()
+         .tooltip()
+         .axis(false)                         
+       });
+       const chart2 = new Chartisan({
          el: '#chart2',
          url: "@chart('expense_chart')",
          hooks: new ChartisanHooks()
@@ -237,10 +249,19 @@
          .tooltip()
          .axis(false)                         
        });
-
-       const chart2 = new Chartisan({
-         el: '#chart',
-         url: "@chart('sample_chart')",
+       const chart3 = new Chartisan({
+         el: '#chart3',
+         url: "@chart('deposit_chart')",
+         hooks: new ChartisanHooks()
+         .datasets('pie')
+         .legend()
+         .colors()
+         .tooltip()
+         .axis(false)                         
+       });
+       const chart4 = new Chartisan({
+         el: '#chart4',
+         url: "@chart('status_chart')",
          hooks: new ChartisanHooks()
          .datasets('pie')
          .legend()

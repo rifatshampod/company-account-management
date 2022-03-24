@@ -21,7 +21,7 @@ class dashboardController extends Controller
         $data = Project::join('clients', 'clients.id', '=', 'projects.client_id')
               		// ->join('city', 'city.state_id', '=', 'state.state_id')
               		// ->get(['projects.id','projects.name as name', 'clients.name as client_name','projects.renewal as renewal','projects.next_renewal_date as renewal_date', 'projects.status as status'])
-                    ->paginate(5, array('projects.id','projects.name as name', 'clients.name as client_name','projects.renewal as renewal','projects.next_renewal_date as renewal_date', 'projects.status as status'));
+                    ->paginate(4, array('projects.id','projects.name as name', 'clients.name as client_name','projects.renewal as renewal','projects.next_renewal_date as renewal_date', 'projects.status as status'));
         
         $categories = ['45','20','35'];
         //$user = ['2015','2016','2017','2018','2019','2020'];

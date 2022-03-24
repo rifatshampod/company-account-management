@@ -8,7 +8,7 @@ use Chartisan\PHP\Chartisan;
 use ConsoleTVs\Charts\BaseChart;
 use Illuminate\Http\Request;
 
-class ExpenseChart extends BaseChart
+class StatusChart extends BaseChart
 {
     /**
      * Handles the HTTP request for the given chart.
@@ -19,6 +19,7 @@ class ExpenseChart extends BaseChart
     {
         return Chartisan::build()
             ->labels(['First', 'Second', 'Third'])
+            ->dataset('Sample', [1, 2, 3])
             ->dataset('Sample 2', [3, 2, 1]);
     }
 }
