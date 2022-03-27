@@ -79,9 +79,12 @@
                                         <i class="ti-eye"></i>
                                     </div>
                                   </a>
+                                  <a href="invoice">
                                     <div class="employeeTableIconDiv Icon2 d-flex justify-content-center align-items-center mr-1">
-                                        <i class="ti-trash"></i>
-                                    </div>
+                                      <i class="ti-receipt"></i>
+                                  </div>
+                                  </a>
+                                    
                                     <div class="employeeTableIconDiv Icon3 d-flex justify-content-center align-items-center mr-1">
                                         <i class="ti-pencil-alt"></i>
                                     </div>

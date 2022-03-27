@@ -5,6 +5,7 @@ use App\Http\Controllers\clientController;
 use App\Http\Controllers\projectController;
 use App\Http\Controllers\accountController;
 use App\Http\Controllers\dashboardController;
+use App\Http\Controllers\invoiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -90,6 +91,9 @@ Route::get('single-client={client_slug}', [clientController::class, 'clientView'
 
 //single project
 Route::get('single-project={project_slug}', [projectController::class, 'projectView']);
+
+//invoice
+Route::get('invoice', [invoiceController::class, 'invoice']);
 
 
 //-------------- controller routes----------------------------------------------------------------------------------------------

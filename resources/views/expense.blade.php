@@ -80,9 +80,10 @@
                                     <div class="employeeTableIconDiv Icon1 d-flex justify-content-center align-items-center mr-1" onclick="location.href='profile.html'" onclick="location.href='profile.html'">
                                         <i class="ti-eye"></i>
                                     </div>
+                                    <!--
                                     <div class="employeeTableIconDiv Icon2 d-flex justify-content-center align-items-center mr-1">
                                         <i class="ti-trash"></i>
-                                    </div>
+                                    </div>  -->
                                     <div class="employeeTableIconDiv Icon3 d-flex justify-content-center align-items-center mr-1">
                                         <i class="ti-pencil-alt"></i>
                                     </div>

@@ -119,12 +119,14 @@
                             <td>{{$item['status']}}</td>
                             <td>
                                 <div class="employeeTableIcon d-flex">
-                                    <div class="employeeTableIconDiv Icon1 d-flex justify-content-center align-items-center mr-1" onclick="location.href='profile.html'" onclick="location.href='profile.html'">
+                                  <a href="{{url('single-project='.$item['id'])}}">
+                                    <div class="employeeTableIconDiv Icon1 d-flex justify-content-center align-items-center mr-1">
                                         <i class="ti-eye"></i>
                                     </div>
-                                    <div class="employeeTableIconDiv Icon2 d-flex justify-content-center align-items-center mr-1">
-                                        <i class="ti-trash"></i>
-                                    </div>
+                                  </a>
+                                  <div class="employeeTableIconDiv Icon2 d-flex justify-content-center align-items-center mr-1">
+                                    <i class="ti-receipt"></i>
+                                </div>
                                     <div class="employeeTableIconDiv Icon3 d-flex justify-content-center align-items-center mr-1">
                                         <i class="ti-pencil-alt"></i>
                                     </div>
@@ -221,6 +223,8 @@
         </div>
       </div>
     </div>
+
+
     
      <!-- Charting library -->
      <script src="https://unpkg.com/echarts/dist/echarts.min.js"></script>

@@ -89,19 +89,17 @@
                    
                     <div class="dropdown-content-body">
                       <ul>
-                        <li>
-                          <a href="/profile">
+                        
+                        <li onclick="location.href='profile'">
                             <i class="ti-user"></i>
                             <span>Profile</span>
-                          </a>
                         </li>
-                        
 
-                        <li>
-                          <a href="#">
+                        <li onclick="location.href='logout'">
+                          
                             <i class="ti-power-off"></i>
                             <span>Logout</span>
-                          </a>
+                          
                         </li>
                       </ul>
                     </div>
