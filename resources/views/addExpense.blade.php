@@ -46,6 +46,10 @@
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>Expense Category</label>
+                                    <a href="project-category">
+                                      <img class="ml-2" src="assets/images/plus.png" width="20px" alt="">
+                                    </a>
+                                    
                                     <select class="form-control input-default" name="cat">
                                       @foreach ($categorylist as $item)
                                       <option value="{{$item['id']}}">{{$item['name']}}</option>
@@ -56,6 +60,9 @@
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>Project</label>
+                                    <a href="create-project">
+                                      <img class="ml-2" src="assets/images/plus.png" width="20px" alt="">
+                                    </a>
                                     <select class="form-control input-default " name="project"> 
                                       @foreach ($projectlist as $item)
                                       <option value="{{$item['id']}}">{{$item['name']}}</option>
@@ -66,6 +73,9 @@
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>Client</label>
+                                    <a href="create-client">
+                                      <img class="ml-2" src="assets/images/plus.png" width="20px" alt="">
+                                    </a>
                                     <select class="form-control input-default " name="client">
                                       @foreach ($clientlist as $item)
                                       <option value="{{$item['id']}}">{{$item['name']}}</option>
@@ -88,6 +98,9 @@
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>Paid From</label>
+                                    <a href="add-account">
+                                      <img class="ml-2" src="assets/images/plus.png" width="20px" alt="">
+                                    </a>
                                     <select class="form-control input-default" name="account">
                                       @foreach ($accountlist as $item)
                                       <option value="{{$item['id']}}">{{$item['name']}}</option>

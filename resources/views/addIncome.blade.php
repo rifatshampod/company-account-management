@@ -40,6 +40,9 @@
                           <div class="col-lg-6">
                             <div class="form-group">
                                 <label>Project Name</label>
+                                <a href="create-project">
+                                  <img class="ml-2" width="20px" src="assets/images/plus.png" alt="">
+                                </a>
                                 <select class="form-control input-default " name="project"> 
                                   @foreach ($projectlist as $item)
                                   <option value="{{$item['id']}}">{{$item['name']}}</option>
@@ -57,6 +60,9 @@
                             <div class="col-lg-6">
                               <div class="form-group">
                                   <label>Income Category</label>
+                                  <a href="project-category">
+                                    <img class="ml-2" width="20px" src="assets/images/plus.png" alt="">
+                                  </a>
                                   <select class="form-control input-default" name="cat">
                                     @foreach ($categorylist as $item)
                                     <option value="{{$item['id']}}">{{$item['name']}}</option>
@@ -67,6 +73,9 @@
                             <div class="col-lg-6">
                               <div class="form-group">
                                   <label>Paid To </label>
+                                  <a href="add-account">
+                                    <img class="ml-2" width="20px" src="assets/images/plus.png" alt="">
+                                  </a>
                                   <select class="form-control input-default" name="account">
                                     @foreach ($accountlist as $item)
                                     <option value="{{$item['id']}}">{{$item['name']}}</option>

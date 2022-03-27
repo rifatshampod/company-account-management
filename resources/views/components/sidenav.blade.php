@@ -90,7 +90,7 @@
                     <div class="dropdown-content-body">
                       <ul>
                         <li>
-                          <a href="profile">
+                          <a href="/profile">
                             <i class="ti-user"></i>
                             <span>Profile</span>
                           </a>

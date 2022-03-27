@@ -45,6 +45,9 @@
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>Stakeholder</label>
+                                    <a href="create-client">
+                                      <img class="ml-2" width="20px" src="assets/images/plus.png" alt="">
+                                    </a>
                                     <select class="form-control input-default " name="client">
                                       @foreach($clientlist as $item)
                                         <option value="{{$item['id']}}">{{$item['name']}}</option>
@@ -55,6 +58,9 @@
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>Category</label>
+                                    <a href="project-category">
+                                      <img class="ml-2" width="20px" src="assets/images/plus.png" alt="">
+                                    </a>
                                     <select class="form-control input-default " name="category">
                                       @foreach($categorylist as $item)
                                       <option value="{{$item['id']}}">{{$item['name']}}</option>
