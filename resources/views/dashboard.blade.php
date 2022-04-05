@@ -237,7 +237,7 @@
          el: '#chart',
          url: "@chart('sample_chart')",
          hooks: new ChartisanHooks()
-         .datasets('pie')
+         .datasets('bar')
          .legend()
          .colors()
          .tooltip()

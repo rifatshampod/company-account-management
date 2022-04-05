@@ -7,48 +7,28 @@ use App\Http\Controllers\accountController;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\invoiceController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+//-------------- disabling register for new users ----------------------------------------------------------------------------------------------
+Auth::routes(['register' => false]);
 
-// Route::get('/', function () {          //index page
-//     return view('dashboard');
-// });
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-//-------------Static view Routes
+Route::group(['middleware' => ['web', 'auth']], function(){
 
-// Route::view('dashboard','dashboard');
-//Route::view('clients','client');
+    //-------------Static view Routes
+
+
 Route::view('create-client','addClient');
-// Route::view('projects','project');
-//Route::view('create-project','addProject');
-//Route::view('project-category','projectCategory');
-//Route::view('account','account');
 Route::view('add-account','addAccount');
-//Route::view('income','income');
-//Route::view('add-income','addIncome');
-//Route::view('expense','expense');
-//Route::view('add-expense','addExpense');
-//Route::view('transfer','transfer');
-///Route::view('add-transfer','addTransfer');
 Route::view('user','user');
 Route::view('profile','profile');
-Route::view('login','signIn');
+Route::view('signin','signIn');
 Route::view('forget','forgetPassword');
 Route::view('single-client','singleClientView');
 Route::view('single-project','singleProjectView');
 
 //-------------Static view Routes
-
-
-//-------------- controller routes----------------------------------------------------------------------------------------------
+    
+    //-------------- controller routes----------------------------------------------------------------------------------------------
 
 //dashboard
 Route::get("/", [dashboardController::class, 'dataCount']);  //show all data counts in dashboard
@@ -95,5 +75,4 @@ Route::get('single-project={project_slug}', [projectController::class, 'projectV
 //invoice
 Route::get('invoice', [invoiceController::class, 'invoice']);
 
-
-//-------------- controller routes----------------------------------------------------------------------------------------------
+});
